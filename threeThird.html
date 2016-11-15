@@ -1,0 +1,15 @@
+<script>
+	var n = parseInt(prompt("Введите N: "));
+	var a = eg(n);
+	alert(a);
+	function eg(k)
+	{
+		if (k==0)
+			return 1;
+		else 
+		{
+			return k*eg(k-1) + 1/k;
+		}
+
+	}
+</script>

@@ -1,0 +1,32 @@
+<script>
+	var s = prompt("Введите строку: ");
+	var k = parseInt(prompt("Введите число: "));
+	var answer = align(s,k);
+	alert(answer);
+	function align(s,k)
+	{
+		var l = s.length;
+		var ost = k-l;
+		var s1 = "";
+		var j = 0;
+		for (var i = 0; i < l; i++)
+		{
+			if (ost!=0 || i<l)
+			{
+				s1+=s[i];
+				if(s[i+j]==" ")
+				{
+					while(ost != 0)
+					{
+						j++;
+						s1 += " ";
+						ost = ost -1;
+					}
+				}
+			}
+			else
+				break;
+		}
+		return s1;
+	}
+</script>

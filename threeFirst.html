@@ -1,0 +1,34 @@
+<script>
+//s = "abcdgababcefbcdg";
+var s = prompt("Введи строку: ");
+var answer = 0;
+var currentAnswer = 0;
+var pos=0;
+
+for (var i = 0; i<s.length; i++)
+{
+	for (var j = i+1; j<s.length;j++)
+	{
+		currentAnswer=0;
+		while (s[i+currentAnswer] == s[j+currentAnswer] && j+currentAnswer<s.length) 
+		{
+			currentAnswer+=1;
+		}
+		if(answer<currentAnswer){
+			answer=currentAnswer;
+			pos=j;
+
+		}
+	}
+}
+
+var q=""; 
+for( i = pos; i<answer+pos; i++)
+{
+	q+=s[i];
+}
+alert("Позиция: " + pos);
+alert("Количество символов в ответе: " + answer);
+alert("Ответ: " + q);
+
+</script>

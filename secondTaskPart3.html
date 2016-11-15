@@ -1,0 +1,39 @@
+<script>
+var n = prompt("Введите строку:");
+var a = prompt("А: ");
+var currentAnswer1;
+var currentAnswer2;
+var answer;
+var b = prompt("В: ");
+for (var i = 0; i < n.length; i++)
+{
+	if (n[i]==a)
+	    currentAnswer1 = i;
+	if (n[i]==b)
+		currentAnswer2 = i;
+}
+if (a == undefined || b == undefined)
+{	
+	if (a == undefined)
+	{	
+		if (b != undefined)
+			alert(b);
+		else 
+			alert(0);
+	}
+	if (b == undefined)
+	{	
+		if (a != undefined)
+			alert(a);
+		else 
+			alert(0);
+	}
+}
+else
+{
+	if (currentAnswer1<currentAnswer2)
+	alert(b);
+    if (currentAnswer2<=currentAnswer1)
+	alert(a);
+}
+</script>
