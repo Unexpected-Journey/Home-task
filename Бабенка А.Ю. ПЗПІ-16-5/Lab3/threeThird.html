@@ -1,0 +1,20 @@
+<script>
+/*
+Написать рекурсивную функцию, определяющую n-ный элемент ряда:
+a[o] = 1; a[k] = k*a[k-1]+1/k; k=1,2... 
+
+*/
+	var n = parseInt(prompt("Введите N: "));
+	var a = eg(n);
+	alert(a);
+	function eg(k)
+	{
+		if (k==0)
+			return 1;
+		else 
+		{
+			return k*eg(k-1) + 1/k;
+		}
+
+	}
+</script>

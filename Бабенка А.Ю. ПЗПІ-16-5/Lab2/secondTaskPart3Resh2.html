@@ -1,0 +1,66 @@
+<script>
+/*
+Задача на отлично:
+Дано натуральное число. Если в нем есть цифры а и b, то определить, какая из них расположена в числе правее. Если одна или обе эти цифры встречаются в числе несколько раз, то должны быть рассмотрены последние из одинаковых цифр
+*/
+var number = parseFloat(prompt("Введите число"));
+var number1 = parseInt(number);
+var a = parseFloat(prompt("A:"));
+var b = parseFloat(prompt("B:"));
+
+function Count(n,a,b)
+{
+	
+    var i;
+    var t;
+    var k = 0;
+    while(1)
+    {
+        i = parseInt(n/10);
+        i = i*10;
+        t = n-i;
+        
+        if (t==a)
+        	return a;
+        if (t==b)
+        	return b;
+        n=(n-t)/10;
+        if (n==0)
+        	break;
+        
+    }
+}
+if (a == "NaN" ||b == "NaN")
+{	
+	if (a == "NaN")
+	{	
+		if (b != "NaN")
+			alert(b);
+	}
+	if (b == "NaN")
+	{	
+		if (a != "NaN")
+			alert(a);
+		else 
+			alert("Значения А и В не заданы! #FATAL_ERROR");
+	}
+}
+else
+{
+	while(1)
+	{
+	if (number!=number1)
+	{
+		number1 = parseInt(number);
+		number*=10;
+		
+	}
+	else
+		break;
+	}
+var s = Count(number,a,b);
+if(s == undefined)
+	s ="Значениия А и В не входят в число или ведены неправильно!!!"
+alert(s);
+}
+</script>

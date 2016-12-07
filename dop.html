@@ -1,0 +1,36 @@
+<script>
+	var n = parseInt(prompt());
+	var i = 0;
+	var arr = [];
+	var e;
+	var count = 0;
+	while(1)
+	{
+		e = parseInt(n/10);
+	    e = e*10;
+	    arr[i] = n-e;
+	    i++;
+	    n=parseInt(n/10);
+		if(n==0)
+			break;
+	}
+	var l = arr.length;
+	if (i%2==1)
+		i++;
+	var g = i/2;
+	for(var j = 0; j<g; j++)
+	{
+		
+		
+			if (arr[j]==arr[l-1-j])
+				count++;
+		
+	}
+	if(count==g)
+		alert(1);
+	else
+		alert(0);
+	
+	
+
+</script>

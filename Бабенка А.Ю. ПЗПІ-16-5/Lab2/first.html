@@ -1,0 +1,44 @@
+<script>
+/*
+В некотором году (назовем его условно первым) на участке в 100 гектаров средняя урожайность ячменя составила 20 центнеров с гектара. После этого каждый год площадь участка увеличивалась на 5%, а средняя урожайность — на  2%. 
+Определить: 
+а) урожайность за второй, третий, ..., восьмой год; 
+б) площадь участка в четвертый, пятый, ..., седьмой год;
+в) какой урожай будет собран за первые шесть лет.
+*/
+var area = 100;
+var averageYield = 20;
+var yielD;
+var sumYield = averageYield*area; // 3) Ответ урожая
+var answerAY = 0;;    // 1) Ответ средней урожайности
+var ansArea = 0;           // 2) Ответ площади
+var answerAY1 = "";
+var ansArea1 = "";
+for (var i = 2; i<=8; i++)
+{
+	averageYield = averageYield + averageYield/50;
+	area = area + area/20;
+	yielD = averageYield*area;
+	
+	if(i>1 && i<9)
+	{
+		answerAY = averageYield;
+		answerAY1 = answerAY1 + answerAY + "\n" ;
+	}
+	if(4<=i && 7>=i)
+	{
+		ansArea = area;
+		ansArea1 = ansArea1 + ansArea + "\n";
+	}
+	if(i<=6)
+	{
+		sumYield+=yielD;
+	}
+}
+answerAY = "Средняя урожайность за (2..8):" + "\n" + answerAY1;
+ansArea = "Площадь за (4..7):" + "\n" + ansArea1;
+sumYield = "Урожай за первых 6 лет: " + sumYield;
+alert(answerAY);
+alert(ansArea);
+alert(sumYield);
+</script>

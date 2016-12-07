@@ -23,9 +23,18 @@
 						ost = ost -1;
 					}
 				}
+
 			}
 			else
 				break;
+		}
+		if (j==0 && ost != 0)
+		{
+			s1="";
+			for (var i = 0; i<ost; i++){
+				s1 +=" ";
+			}
+			s1+=s;
 		}
 		return s1;
 	}
